@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Task" table="TASKS">
+    	<id name="id" column="TASK_ID">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="TASK_NAME"/>
+        <property name="deadline" column="TASK_DEADLINE"/>
+        <set name="webdevelopers" table="TASK_WEBDEVELOPER" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TASK_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="Webdeveloper">
+                <column name="WEBDEVELOPER_ID" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="graphicdesigners" table="TASK_GRAPHICDESIGNER" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TASK_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="GraphicDesigner">
+                <column name="GRAPHICDESIGNER_ID" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="managers" table="TASK_MANAGER" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TASK_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="Manager">
+                <column name="MANAGER_ID" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

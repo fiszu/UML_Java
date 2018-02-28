@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Order" table="ORDERS">
+    	<id name="id" column="ORDER_ID">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="ORDER_NAME"/>
+        <property name="deliveryTime" column="ORDER_DELIVERYTIME"/>
+        <many-to-one name="client" column="Client_ID" class="Client" not-null="true"  cascade="all"/>  
+        <many-to-one name="manager" column="Manager_ID" class="Manager" not-null="true"  cascade="all"/>  
+    </class>
+</hibernate-mapping>

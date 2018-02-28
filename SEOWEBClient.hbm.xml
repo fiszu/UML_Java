@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="SEOWEBClient" table="SEOWEBCLIENT">
+    	<id name="id" column="CLIENT_ID">
+            <generator class="native"/>
+        </id>     
+        <property name="name" type="string">
+        	<column name="NAME" length="50"/>
+        </property>
+        <property name="lataWspolpracy" type="int">
+        	<column name="LATAWSPOLPRACY" length="10"/>
+        </property>
+        <property name="domena" type="string">
+        	<column name="DOMENA" length="100"/>
+        </property>
+        <property name="slowaKluczowe" type="string">
+        	<column name="SLOWAKLUCZOWE" length="200"/>
+        </property>
+        
+    </class>
+</hibernate-mapping>

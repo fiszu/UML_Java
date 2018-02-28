@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Technical" table="Technical">
+    	<id name="id" column="TECHNICAL_ID">
+            <generator class="native"/>
+        </id>
+        <property name="pesel" type="string">
+        	<column name="PESEL" length="11"/>
+        </property>
+        <property name="name" type="string">
+        	<column name="NAME" length="50"/>
+        </property>
+        <property name="surname" type="string">
+        	<column name="SURNAME" length="50"/>
+        </property>
+        <property name="wages" type="float">
+        	<column name="WAGES" length="10"/>
+        </property>
+        
+        <property name="wyksztalcenie" column="TECHNICAL_WYKSZTALCENIE"/>  
+    </class>
+</hibernate-mapping>

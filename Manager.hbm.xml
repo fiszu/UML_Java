@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Manager" table="Manager">
+    	<id name="id" column="MANAGER_ID">
+            <generator class="native"/>
+        </id>
+        <property name="pesel" type="string">
+        	<column name="PESEL" length="11"/>
+        </property>
+        <property name="name" type="string">
+        	<column name="NAME" length="50"/>
+        </property>
+        <property name="surname" type="string">
+        	<column name="SURNAME" length="50"/>
+        </property>
+        <property name="wages" type="float">
+        	<column name="WAGES" length="10"/>
+        </property>
+        
+        <set name="tasks" table="TASK_MANAGER" inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="MANAGER_ID" not-null="true" />
+            </key>
+            <many-to-many entity-name="Task">
+                <column name="TASK_ID" not-null="true" />
+            </many-to-many>
+        </set>
+             
+    </class>
+</hibernate-mapping>
