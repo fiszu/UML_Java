@@ -1,5 +1,6 @@
 # UML_Java
 Zagadnienia UML zaimplementowane w języku Java:
+- klasy z odpowiednimi powiązaniami,
 - ekstensje klas,
 - trwałość ekstensji,
 - interakcja dwóch klas połączonych asocjacją,
@@ -12,4 +13,4 @@ Zagadnienia UML zaimplementowane w języku Java:
 
 Dodatkowo:
 - framework Hibernate (mapowanie klas do bazy danych),
-- implementacja WindowBuilder.
+- elementy graficznego interfejsu użytkownika (implementacja WindowBuilder).
